@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Portfolio MANNONI Pascal</title>
+	</head>
+
+	<body>
+		<header id="home">
+			<nav>
+				<div id="largeScreen">
+					<ul>
+						<li><a href="#home"><p>// accueil</p></a></li>
+						<li><a href="#about"><p>// à propos de moi</p></a></li>
+						<li><a href="#skills"><p>// compétences</p></a></li>
+						<li><a href="#projects"><p>// projets</p></a></li>
+						<li><a href="#contact"><p>// contact</p></a></li>
+					</ul>
+				</div>
+				<div id="smallScreen" onclick="displayMenu()">
+					<img src="images/Hamburger.svg" alt="">
+				</div>
+				<div id="navMenu" class="menu">
+					<ul>
+						<li><a href="#home"><p>// accueil</p></a></li>
+						<li><a href="#about"><p>// à propos de moi</p></a></li>
+						<li><a href="#skills"><p>// compétences</p></a></li>
+						<li><a href="#projects"><p>// projets</p></a></li>
+						<li><a href="#contact"><p>// contact</p></a></li>
+					</ul>
+				</div>
+			</nav>
+
+		</header>
+		<main>
+			<section id="title">
+				<article>
+					<h1>
+						<div>MANNONI</div>
+						<div>Pascal</div>
+					</h1>
+					<img src="images/photo.svg" alt="">
+				</article>
+			</section>
+			<section id="about">
+				<article>
+					<div class="subTitle">
+						<h2>A propos de moi</h2>
+						<img src="images/titleImage.svg" alt="">
+					</div>
+					<div class="window">
+						<div class="upperBar">
+							<div class="case"><img src="images/-.svg" alt=""></div>
+							<div class="case"><img src="images/Group 4.svg" alt=""></div>
+							<div class="case"><img src="images/x.svg" alt=""></div>
+						</div>
+						<div class="windowText">
+							<p>
+								Etant actuellement en formation conception et developpement d'applications à l'école RI7, j'ai pour projet de continuer progresser dans ce domaine en alternance.
+																																																				Suite à mon expérience en tant que Technicien de laboratoire biomédicale, j'ai acquis de nombreuses compétences transverses utiles dans le développment comme le travail de groupe.
+							</p>
+						</div>
+					</div>
+				</article>
+			</section>
+			<section id="skills">
+				<article>
+					<div class="subTitle">
+						<h2>Competences</h2>
+						<img src="images/titleImage.svg" alt="">
+					</div>
+					<div id="displaySkills">
+						<div id="cornerTop">
+							<img src="images/Group 9.svg" alt="">
+						</div>
+
+						<h3 class="frontendItem">
+							&gt; Front-End :</h3>
+						<div id="frontendItems">
+							<div class="frontendItemIcons">
+								<img src="images/Group 11.svg" alt="">
+								<p>
+									<span>H</span>TML5</p>
+							</div>
+							<div class="frontendItemIcons">
+								<img src="images/Group 12.svg" alt="">
+								<p>
+									<span>C</span>SS</p>
+							</div>
+							<div class="frontendItemIcons">
+								<img src="images/Group 10.svg" alt="">
+								<p>
+									<span>B</span>oostrap</p>
+							</div>
+							<div class="frontendItemIcons">
+								<img src="images/javascript 1.svg" alt="">
+								<p>
+									<span>J</span>avaScript</p>
+							</div>
+							<div class="frontendItemIcons">
+								<img src="images/typescript 1.svg" alt="">
+								<p>
+									<span>T</span>ypeScript</p>
+							</div>
+						</div>
+
+						<div id="backendItems">
+							<div class="backendItemIcons">
+								<img src="images/Group 13.svg" alt="">
+								<p>
+									<span>P</span>HP</p>
+							</div>
+							<div class="backendItemIcons">
+								<img src="images/Group 14.svg" alt="">
+								<p>
+									<span>C</span>++</p>
+							</div>
+							<div class="backendItemIcons">
+								<img src="images/Group 15.svg" alt="">
+								<p>
+									<span>N</span>ode.js</p>
+							</div>
+						</div>
+						<h3 class="backendItem">
+							: Back-End &lt;
+						</h3>
+						<div id="cornerBottom">
+							<img src="images/Group 8.svg" alt="">
+						</div>
+					</div>
+				</article>
+			</section>
+			<section id="projects">
+
+				<article>
+					<div class="subTitle">
+						<h2>Projets</h2>
+						<img src="images/titleImage.svg" alt="">
+					</div>
+					<div class="scene">
+
+						<div class="carousel">
+
+							{% for project in projects %}
+								<div class="carousel__cell">
+									<p class="projectText">{{project.name}}</p>
+									<img src="./images/{{project.image}}" alt="">
+									<div>
+										<a class="button" href="{{project.lien}}">Visiter</a>
+										<a class="imgButton" href="{{project.lienGithub}}"><img src="images/Group 28.svg" alt=""></a>
+									</div>
+								</div>
+							{% endfor %}
+
+
+						</div>
+					</div>
+					<button class="previous-button">Projet précédent</button>
+					<button class="next-button">Projet suivant</button>
+				</article>
+			</section>
+			<section id="contact">
+				<div class="subTitle">
+					<h2>Contact</h2>
+					<img src="images/titleImage.svg" alt="">
+				</div>
+				<div id="windows">
+					<article>
+						<div class="windowContact">
+							<div class="upperBarContact">
+								<div class="caseContact"><img src="images/-.svg" alt=""></div>
+								<div class="caseContact"><img src="images/Group 4.svg" alt=""></div>
+								<div class="caseContact"><img src="images/x.svg" alt=""></div>
+							</div>
+							<div class="windowTextContact contactForm">
+								<form action="/sendMail" method="post">
+									<input type="text" name="name" id="name" placeholder="Nom" required>
+									<input type="text" name="firstname" id="name" placeholder="Prénom" required>
+									<input type="mail" name="mail" id="mail" placeholder="Adresse mail" required>
+									<input type="tel" name="tel" id="tel" placeholder="Numéro téléphone" required>
+									<input type="text" name="compagny" id="compagny" placeholder="Entreprise" required>
+									<textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message" required></textarea>
+									<button type="submit">Envoyer                                                                                                                                                                                                                                                                                                                                                                                                                            button>
+									</form>
+								</div>
+							</div>
+						</article>
+						<article>
+							<div class="windowContact">
+								<div class="upperBarContact">
+									<div class="caseContact"><img src="images/-.svg" alt=""></div>
+									<div class="caseContact"><img src="images/Group 4.svg" alt=""></div>
+									<div class="caseContact"><img src="images/x.svg" alt=""></div>
+								</div>
+								<div class="windowTextContact">
+									<div><img src="images/Group 40.svg" alt="">
+										<p>à demander par formulaire</p>
+									</div>
+									<div><img src="images/Group 38.svg" alt="">
+										<p>Disponible à Aubagne et ses alentours</p>
+									</div>
+									<div><img src="images/Group 39.svg" alt=""><a href="https://www.linkedin.com/in/pascal-mannoni/">
+											<p>Pascal mannoni</p>
+										</a>
+									</div>
+									<div><img src="images/Group 29.svg" alt=""><a href="https://github.com/Manno-pascal" target="blank">
+											<p>manno-pascal</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+				</section>
+
+			</main>
+			<footer></footer>
+			<script src="scripts/script.js"></script>
+		</body>
+	</body>
+</html>

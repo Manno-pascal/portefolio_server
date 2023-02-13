@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Ajouter un projet</h1>
+		<form action="/addProject" method="POST" enctype="multipart/form-data">
+			<input type="text" id="name" name="name" placeholder="Nom du projet">
+			<input type="url" id="lien" name="lien" placeholder="lien du projet">
+			<input type="url" id="lienGithub" name="lienGithub" placeholder="lien github">
+			<input type="file" id="lienImage" name="image" placeholder="lien de l'image">
+			<button type="submit">Valider</button>
+		</form>
+
+		{% for project in projects %}
+			<div class="editCard" style="border: 1px black solid; margin: 5vh; padding: 5vh;">
+				<form action="/editProject" enctype="multipart/form-data">
+					<p class="projectText">{{project.name}}</p>
+					<input type="text" id="name" name="name" placeholder="Edit Name">
+					<p class="projectText">{{project.lien}}</p>
+					<input type="url" id="lien" name="lien" placeholder="Edit lien">
+					<p class="projectText">{{project.lienGithub}}</p>
+					<input type="url" id="lienGithub" name="lienGithub" placeholder="Edit lien github">
+					<p class="projectText">{{project.image}}</p>
+					<input type="file" id="lienImage" name="image" placeholder="Edit image">
+					<div><button type="submit">Editer</button></div>
+				</form>
+			</div>
+
+		{% endfor %}
+
+	</body>
+</html>
